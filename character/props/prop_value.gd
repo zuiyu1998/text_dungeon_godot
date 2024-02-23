@@ -9,3 +9,6 @@ func get_value() -> int:
 
 func set_value(value: float):
 	_value = value
+
+func set_max(max: float):
+	_max = max

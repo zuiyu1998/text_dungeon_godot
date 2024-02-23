@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="CharacterPropsAsset" load_steps=2 format=3 uid="uid://dn221rqyl3fcr"]
+
+[ext_resource type="Script" path="res://db/character/character_props_asset.gd" id="1_g1c4t"]
+
+[resource]
+script = ExtResource("1_g1c4t")
+path = "res://assets/character/props/default.character_props_asset.csv"

@@ -21,7 +21,7 @@ func set_character_list(list: Array[Character]):
 	character_list = list	
 	sequece_list = []
 	for index in range(0,character_list.size()):
-		var sequence = SequenceFactory.get_sequence(character_list[index].initiative_id)
+		var sequence = SequenceFactory.get_sequence(character_list[index].props.initiative_id)
 		sequence.character_index = index
 		sequence.from_character(character_list[index])
 		sequece_list.push_back(sequence)
