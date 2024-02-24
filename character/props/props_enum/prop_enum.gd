@@ -1,7 +1,5 @@
 class_name PropEnum
 
-enum HitEnum {}
-
 var key: StringName
 
 static func get_prop_enum(key: String) -> PropEnum:

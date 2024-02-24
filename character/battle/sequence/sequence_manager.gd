@@ -14,6 +14,11 @@ func next():
 func get_current_character() -> Character:
 	return character_list[sequence_index]
 
+# 获取另一个角色，只有两个的时候
+func get_unactive_character() -> Character:
+	var index = (sequence_index + 1 ) % character_list.size()
+	return character_list[index]
+
 func _sort_by(a: Sequence, b:Sequence):
 	return a.sequnce >= b.sequnce
 
