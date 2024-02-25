@@ -6,7 +6,7 @@ extends Node2D
 func on_wheel():
 	if Input.is_action_just_pressed("attack"):
 		var battle_system = BattleSystem.new(player.character, enemy.character)
-		var battle = battle_system.get_battle()
+		battle_system.start_battle()
 		pass
 	pass
 

@@ -2,9 +2,9 @@ class_name PropEnum
 
 var key: StringName
 
-static func get_prop_enum(key: String) -> PropEnum:
+static func get_prop_enum(raw: String) -> PropEnum:
 	var prop_enum = Unknow.new() as PropEnum
-	match key:
+	match raw:
 		"Agile":
 			prop_enum = Agile.new() as PropEnum
 		"Armor":
