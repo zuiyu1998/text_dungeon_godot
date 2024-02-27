@@ -10,8 +10,12 @@ func start(active: Character, unactive: Character):
 	print(damage_enum)
 	
 	var hit_calculator = HitCalculatorFactory.get_id(active.props.hit_calculator_id)
+	hit_calculator.from_characters(active, unactive)
 	hit_calculator.set_damage(damage_enum)
-	
-	var hit_result = hit_calculator.get_hit_result(active.props, unactive.props)
-	
+	var hit_res = hit_calculator.get_hit_result()
+
+	print("hit_res is_hit:", hit_res.is_hit)
+	print("hit_res is_dodge", hit_res.is_dodge)
+	print("hit_res is_armor", hit_res.is_armor)
+
 	pass
