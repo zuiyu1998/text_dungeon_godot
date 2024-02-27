@@ -1,6 +1,6 @@
 class_name Character
 
-var props_meta: CharacterPropsMeta = CharacterPropsMeta.new()
+var props_meta: CharacterMeta = CharacterMeta.new()
 
 var props: Props:
 	get:
@@ -16,9 +16,13 @@ func _get_props(id: int):
 		var value = PropValue.new()
 		var prop_enum = PropEnum.get_prop_enum(prop_value["prop_enum"])
 		value.set_value(prop_value.value)
-		value.set_max(prop_value.max)
+		value.set_max(prop_value.max_value)
 		_props.set_prop(prop_enum, value)
-		pass	
+
+	for dice in model.dices:
+		var prop_enum = PropEnum.get_prop_enum(dice["prop_enum"])
+		_props.set_dice_trend(prop_enum, dice.trend)
+		_props.set_dice_max(prop_enum, dice.max_number)
 
 func _init() -> void:
 	_get_props(props_meta.id)

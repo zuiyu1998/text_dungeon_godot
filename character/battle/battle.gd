@@ -15,7 +15,7 @@ func start(active: Character, unactive: Character):
 	var hit_res = hit_calculator.get_hit_result()
 
 	print("hit_res is_hit:", hit_res.is_hit)
-	print("hit_res is_dodge", hit_res.is_dodge)
-	print("hit_res is_armor", hit_res.is_armor)
+	print("hit_res is_dodge:", hit_res.is_dodge)
+	print("hit_res is_armor:", hit_res.is_armor)
 
 	pass
