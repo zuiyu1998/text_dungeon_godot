@@ -1,8 +1,10 @@
 class_name Props
 
-var data: Dictionary
-var dice_trend: Dictionary
-var dice_max: Dictionary
+var _data: Dictionary
+var _dice_trend: Dictionary
+var _dice_max: Dictionary
+
+var _damages: Dictionary
 
 # 先攻id
 var initiative_id: int = 0
@@ -13,21 +15,30 @@ var battle_id: int = 0
 # 命中计算器id
 var hit_calculator_id: int = 0
 
+func _init():
+	set_damage(PhysicalHit.new(), 0)
+	set_damage(MagicHit.new(), 0)
+
+func get_damage(key: PropEnum) -> int:
+	return _damages[key.key]
+
+func set_damage(key: PropEnum, value: int):
+	_damages[key.key] = value
+
 func get_dice_trend(key: PropEnum) -> Dice.Trend:
-	return dice_trend[key.key]
+	return _dice_trend[key.key]
 
 func set_dice_trend(key: PropEnum, trend: Dice.Trend):
-	dice_trend[key.key] = trend
+	_dice_trend[key.key] = trend
 
 func get_dice_max(key: PropEnum) -> int:
-	return dice_max[key.key]
+	return _dice_max[key.key]
 
 func set_dice_max(key: PropEnum, new_value: int):
-	dice_max[key.key] = new_value
+	_dice_max[key.key] = new_value
 
 func get_prop(key: PropEnum) -> PropValue:
-	return data[key.key]
+	return _data[key.key]
 
 func set_prop(key: PropEnum, value: PropValue):
-	data[key.key] = value
-
+	_data[key.key] = value

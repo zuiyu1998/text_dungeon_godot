@@ -14,14 +14,14 @@ var _armor_number: int = 0
 func set_damage(damage_enum: DamageEnum.Damage):
 	_damage_enum = damage_enum
 
-func from_characters(active_charater: Character, unactive_Character: Character):
+func from_characters(active_charater: Character, unactive_character: Character):
 	var hit_prop_enum = get_hit_prop_enum()
 	_hit_number = active_charater.props.get_prop(hit_prop_enum).get_value()
 	_hit_dice.trend = active_charater.props.get_dice_trend(hit_prop_enum)
 	_hit_dice.max_number = active_charater.props.get_dice_max(hit_prop_enum)
 
-	_dodge_number = unactive_Character.props.get_prop(Dodge.new()).get_value()
-	_armor_number = unactive_Character.props.get_prop(Armor.new()).get_value()
+	_dodge_number = unactive_character.props.get_prop(Dodge.new()).get_value()
+	_armor_number = unactive_character.props.get_prop(Armor.new()).get_value()
 	pass
 
 # 获取结果
@@ -29,13 +29,7 @@ func get_hit_result() -> HitResult:
 	var res = HitResult.new()
 
 	var dice_res = _hit_dice.get_dice_rusult()
-
-	print("dice_trend:", dice_res.trend)
-	print("dice_number:", dice_res.value)
-
 	var hit_sum = _hit_number + dice_res.value
-
-	print("hit_sum:", hit_sum)
 
 	if not res.is_hit:
 		if hit_sum >= _dodge_number:
