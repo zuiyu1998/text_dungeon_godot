@@ -17,7 +17,7 @@ func set_damage(damage_enum: DamageEnum.Damage):
 	_damage_enum = damage_enum
 
 func from_characters(active_charater: Character, unactive_character: Character):
-	var prop_enum = get_hit_prop_enum()
+	var prop_enum = _get_hit_prop_enum()
 	_base_damage = active_charater.props.get_damage(prop_enum)
 	_thump = active_charater.props.get_prop(Thump.new()).get_value()
 	_thump_dice.trend = active_charater.props.get_dice_trend(Thump.new())
@@ -28,7 +28,7 @@ func from_characters(active_charater: Character, unactive_character: Character):
 	_parrying = unactive_character.props.get_prop(Parrying.new()).get_value()
 	pass
 
-func get_hit_prop_enum() -> PropEnum:
+func _get_hit_prop_enum() -> PropEnum:
 	match _damage_enum:
 		DamageEnum.Damage.Slash:
 			return PhysicalHit.new()
@@ -65,9 +65,14 @@ class ThumpResult:
 	# 重击是否成功
 	var is_thump: bool = false
 
+	# 实际造成的伤害
 	var damage: int = 0
+	# 伤害类型
 	var damage_enum: DamageEnum.Damage
-    
+	
+	# 重击造成的伤害
 	var thump_damage: int = 0
+	# 格挡抵消的伤害
 	var parrying_damage: int = 0
+	# 格挡是否成功
 	var is_parrying: bool = false

@@ -14,6 +14,8 @@ var battle_enum: BattleEnum.Battle = BattleEnum.Battle.Slash
 var battle_id: int = 0
 # 命中计算器id
 var hit_calculator_id: int = 0
+# 重击计算器id
+var thump_calculator_id: int = 0
 
 func _init():
 	set_damage(PhysicalHit.new(), 0)

@@ -1,3 +1,4 @@
 prop_enum,trend,max_number
 PhysicalHit,0,20
 MagicHit,0,20
+Thump,0,20

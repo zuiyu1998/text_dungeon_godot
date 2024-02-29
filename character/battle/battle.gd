@@ -18,4 +18,15 @@ func start(active: Character, unactive: Character):
 	print("hit_res is_dodge:", hit_res.is_dodge)
 	print("hit_res is_armor:", hit_res.is_armor)
 
+	if hit_res.is_hit:
+		var thump_calculator := ThumpCalculatorFactory.get_id(active.props.thump_calculator_id)
+		thump_calculator.from_characters(active, unactive)
+		thump_calculator.set_damage(damage_enum)
+
+		var thump_res := thump_calculator.get_thump_result()
+
+		print("thump_res damage:", thump_res.damage)
+		print("thump_res is_thump:", thump_res.is_thump)
+		print("thump_res is_parrying:", thump_res.is_parrying)
+
 	pass
