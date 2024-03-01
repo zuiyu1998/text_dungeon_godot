@@ -25,4 +25,4 @@ func _get_props(id: int):
 		_props.set_dice_max(prop_enum, dice.max_number)
 
 func _init() -> void:
-	_get_props(props_meta.id)
+	_get_props(props_meta.props_id)

@@ -16,6 +16,8 @@ var battle_id: int = 0
 var hit_calculator_id: int = 0
 # 重击计算器id
 var thump_calculator_id: int = 0
+# 结算器ids
+var effect_ids: Array[int] = [0]
 
 func _init():
 	set_damage(PhysicalHit.new(), 0)

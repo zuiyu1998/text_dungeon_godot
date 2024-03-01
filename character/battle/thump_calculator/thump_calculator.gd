@@ -58,12 +58,16 @@ func get_thump_result() -> ThumpResult:
 		res.damage = 0
 
 	res.damage = damage
+	res.base_damage = _base_damage
 
 	return res
 
 class ThumpResult:
 	# 重击是否成功
 	var is_thump: bool = false
+
+	# 基础伤害
+	var base_damage: int = 0
 
 	# 实际造成的伤害
 	var damage: int = 0

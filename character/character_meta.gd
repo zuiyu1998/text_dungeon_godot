@@ -1,3 +1,3 @@
 class_name CharacterMeta
 
-var id = 0
+var props_id = 0
