@@ -2,11 +2,20 @@ class_name Character
 
 var props_meta: CharacterMeta = CharacterMeta.new()
 
-var props: Props:
+var props: CharacterProps:
 	get:
 		return _props
 
-var _props: Props = Props.new()
+var state: CharacterState:
+	get:
+		return _state
+
+var _props: CharacterProps = CharacterProps.new()
+
+var _state: CharacterState = CharacterState.new()
+
+func _init_state():
+	_state.from_props(_props)
 
 func _get_props(id: int):
 	var model := Global.character_props_db.get_id(id)
@@ -26,3 +35,4 @@ func _get_props(id: int):
 
 func _init() -> void:
 	_get_props(props_meta.props_id)
+	_init_state()

@@ -1,4 +1,4 @@
-class_name Props
+class_name CharacterProps
 
 var _data: Dictionary
 var _dice_trend: Dictionary
