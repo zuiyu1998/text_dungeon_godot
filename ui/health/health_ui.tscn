@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3pdla82hca5w"]
+
+[ext_resource type="Texture2D" uid="uid://rdt62mq17pbf" path="res://assets/character/sprite/health_bg.png" id="1_bkvmi"]
+[ext_resource type="Texture2D" uid="uid://dj46iuu0ca17g" path="res://assets/character/sprite/health_progress.png" id="2_1hbe4"]
+[ext_resource type="Script" path="res://ui/health/health_ui.gd" id="3_lk8ko"]
+
+[node name="Health" type="TextureProgressBar"]
+custom_minimum_size = Vector2(58, 4)
+max_value = 1.0
+step = 0.01
+value = 0.5
+texture_under = ExtResource("1_bkvmi")
+texture_progress = ExtResource("2_1hbe4")
+texture_progress_offset = Vector2(1, 1)
+script = ExtResource("3_lk8ko")
