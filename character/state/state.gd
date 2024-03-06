@@ -10,6 +10,13 @@ var health := 0
 # 人物存活
 var dead := false
 
+func update_damage(damage: int):
+    var tmp = damage + health
+    health = clampi(tmp, 0, health_max)
+
+func get_percent_value() -> float:
+    return 1.0 * health / health_max
+
 func from_props(props: CharacterProps):
     helath_dice.max_number = props.get_prop(HealthMax.new()).get_value()
 

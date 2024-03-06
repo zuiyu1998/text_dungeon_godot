@@ -1,5 +1,7 @@
 class_name Character
 
+signal health
+
 var props_meta: CharacterMeta = CharacterMeta.new()
 
 var props: CharacterProps:
@@ -13,6 +15,10 @@ var state: CharacterState:
 var _props: CharacterProps = CharacterProps.new()
 
 var _state: CharacterState = CharacterState.new()
+
+func update_health(damage: int):
+	_state.update_damage(damage)
+	health.emit()
 
 func _init_state():
 	_state.from_props(_props)

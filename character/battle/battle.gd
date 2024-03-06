@@ -21,7 +21,7 @@ func start(active: Character, unactive: Character):
 		thump_calculator.set_damage(damage_enum)
 
 		var thump_res := thump_calculator.get_thump_result()
-		battle_res.thump_Result = thump_res
+		battle_res.thump_result = thump_res
 
 	battle_res.damage_enum = damage_enum
 	battle_res.hit_result = hit_res
@@ -35,5 +35,5 @@ func start(active: Character, unactive: Character):
 class BattleResult:
 	var is_active: bool = false
 	var hit_result: HitCalculator.HitResult
-	var thump_Result: ThumpCalculator.ThumpResult
+	var thump_result: ThumpCalculator.ThumpResult
 	var damage_enum: DamageEnum.Damage
