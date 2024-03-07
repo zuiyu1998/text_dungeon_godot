@@ -20,8 +20,8 @@ var thump_calculator_id: int = 0
 var effect_ids: Array[int] = [0]
 
 func _init():
-	set_damage(PhysicalHit.new(), 0)
-	set_damage(MagicHit.new(), 0)
+	set_damage(PhysicalHit.new(), 2)
+	set_damage(MagicHit.new(), 2)
 
 func get_damage(key: PropEnum) -> int:
 	return _damages[key.key]

@@ -4,8 +4,11 @@ class_name Enemy
 
 var character = Character.new()
 
-func on_health():
-	health.update_percent_value(character.state.percent_value())
+func on_damage(damage_info: DamageInfo):
+	print(damage_info.damage)
+	health.update_percent_value(character.state.get_percent_value())
 
-func _init():
-	character.health.connect(on_health)
+func _ready():
+	await health.ready
+	character.damage.connect(on_damage)
+	health.value = character.state.get_percent_value()
