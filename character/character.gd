@@ -17,6 +17,8 @@ var _props: CharacterProps = CharacterProps.new()
 var _state: CharacterState = CharacterState.new()
 
 func on_damage(damage_info: DamageInfo):
+	print(damage_info.damage)
+	
 	_state.update_damage(damage_info.damage)
 	damage.emit(damage_info)
 

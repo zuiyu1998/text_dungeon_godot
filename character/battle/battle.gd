@@ -26,11 +26,11 @@ func start(active: Character, unactive: Character):
 	battle_res.damage_enum = damage_enum
 	battle_res.hit_result = hit_res
 
-	battle_res.is_active = true
-	EffectCalculator.effct(active, battle_res)
-
 	battle_res.is_active = false
 	EffectCalculator.effct(unactive, battle_res)
+
+	battle_res.is_active = true
+	EffectCalculator.effct(active, battle_res)
 
 class BattleResult:
 	var is_active: bool = false
