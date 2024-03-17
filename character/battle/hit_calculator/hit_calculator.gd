@@ -14,7 +14,7 @@ var _armor_number: int = 0
 func set_damage(damage_enum: DamageEnum.Damage):
 	_damage_enum = damage_enum
 
-func from_characters(active_charater: Character, unactive_character: Character):
+func from_characters(active_charater: CharacterInstance, unactive_character: CharacterInstance):
 	var hit_prop_enum = get_hit_prop_enum()
 	_hit_number = active_charater.props.get_prop(hit_prop_enum).get_value()
 	_hit_dice.trend = active_charater.props.get_dice_trend(hit_prop_enum)
