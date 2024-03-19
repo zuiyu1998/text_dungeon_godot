@@ -1,3 +1,4 @@
+extends Node
 class_name Character
 
 signal damage
@@ -10,8 +11,14 @@ var state: CharacterState = CharacterState.new()
 
 func get_instance() -> CharacterInstance:
 	var instance = CharacterInstance.new()
-	instance.props = props;
-	instance.state = state;
+	instance.state = state.clone();
+
+	instance.props = props.clone();
+
+	BuffFactory.update_instance(instance)
+
+	print("dd", instance.props.get_prop(Power.new()).get_value())
+
 	return instance
 
 func on_damage(damage_info: DamageInfo):

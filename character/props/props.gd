@@ -1,9 +1,9 @@
+extends Node
 class_name CharacterProps
 
 var _data: Dictionary
 var _dice_trend: Dictionary
 var _dice_max: Dictionary
-
 var _damages: Dictionary
 
 # 先攻id
@@ -18,6 +18,25 @@ var hit_calculator_id: int = 0
 var thump_calculator_id: int = 0
 # 结算器ids
 var effect_ids: Array[int] = [0]
+# buff_ids
+var buf_ids: Array[int] = [0]
+
+func clone() -> CharacterProps:
+	var props = CharacterProps.new()
+
+	props._data = CloneUtil.clone_dictionary(_data);
+	props._damages = CloneUtil.clone_dictionary(_damages);
+	props._dice_trend = CloneUtil.clone_dictionary(_dice_trend);
+	props._dice_max = CloneUtil.clone_dictionary(_dice_max);
+	props.initiative_id = initiative_id;
+	props.battle_enum = battle_enum;
+	props.battle_id = battle_id;
+	props.hit_calculator_id = hit_calculator_id;
+	props.thump_calculator_id = thump_calculator_id;
+	props.effect_ids = effect_ids.duplicate(true);
+	props.buf_ids = buf_ids.duplicate(true);
+
+	return props
 
 func _init():
 	set_damage(PhysicalHit.new(), 2)

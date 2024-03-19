@@ -1,3 +1,4 @@
+extends Object
 class_name CharacterState
 
 var helath_dice := Dice.new()
@@ -9,6 +10,16 @@ var health := 0
 
 # 人物存活
 var dead := false
+
+func clone() -> CharacterState:
+	var state = CharacterState.new()
+
+	state.dead = dead;
+	state.health = health;
+	state.health_max = health_max;
+	state.helath_dice = helath_dice.clone();
+
+	return state
 
 func update_damage(damage: int):
 	var tmp = damage + health
