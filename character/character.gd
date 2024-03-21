@@ -17,8 +17,6 @@ func get_instance() -> CharacterInstance:
 
 	BuffFactory.update_instance(instance)
 
-	print("dd", instance.props.get_prop(Power.new()).get_value())
-
 	return instance
 
 func on_damage(damage_info: DamageInfo):
