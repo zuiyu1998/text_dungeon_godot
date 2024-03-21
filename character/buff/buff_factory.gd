@@ -1,12 +1,12 @@
 class_name BuffFactory
 
 const BUFF_LIST = [
-	preload ("res://character/buff/test_buf.gd")
+	preload ("res://character/buff/start_buf.gd")
 ]
 
 static func get_buff(buf_id: int) -> Buffer:
 	var script = BUFF_LIST[buf_id] as Script
-	var buffer = script.new() as Buffer
+	var buffer = script.new(buf_id) as Buffer
 	return buffer
 
 static func get_buffs(buff_ids: Array) -> Array:
