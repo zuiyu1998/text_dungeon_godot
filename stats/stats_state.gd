@@ -6,6 +6,6 @@ var memory : MemoryStatsData
 
 
 func _init(storage_data: StorageStatsData, memory_data: MemoryStatsData) -> void:
-	storage_data = storage_data
+	storage = storage_data
 	memory = memory_data
 
