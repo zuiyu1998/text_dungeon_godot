@@ -19,11 +19,14 @@ extends Node
 
 ```
 
-effect 所能够改变的数据抽象如下:
+将 effect 所能够改变的数据抽象成一个数据结构 StatsState，它由两部分组成，一个是需要存储的数据 StorageStatsData，一个是常驻内存的数据 MemoryStatsData。如下:
 
 ```
 class_name StatsState
 extends RefCounted
+
+var storage : StorageStatsData
+var memory : MemoryStatsData
 
 ```
 
@@ -38,13 +41,13 @@ func update(state: StatsState) -> void:
 
 ```
 
-stats 需要两个工具函数，一个是生成 StatsState，一个是合并 StatsState 的数据。定义如下:
+Stats 需要保存一份原始的 StorageStatsData，因此 Stats 的定义如下:
 
 ```gds
-func get_state() -> StatsState:
-	return StatsState.new()
+var _effects : Array[StatsEffect] = []
 
+var _storage_data := StorageStatsData.new()
 
-func merge_state(state: StatsState) -> void:
-	pass
+var storage := StorageStatsData.new()
+var memory := MemoryStatsData.new()
 ```
