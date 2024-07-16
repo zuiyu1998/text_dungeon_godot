@@ -1,8 +1,8 @@
 extends Node2D
 
-@onready var stats: Stats = $Stats
+@onready var enemy: Enemy = $Enemy
 
 func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed("attack"):
-		print("[states health: %s, max_health: %s]" % [stats.memory.health,stats.storage.max_health])
+		print("[states health: %s, max_health: %s]" % [enemy.stats.data.health,enemy.stats.data.max_health])
 

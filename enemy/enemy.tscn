@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://csfueq6rsgklv"]
+
+[ext_resource type="Script" path="res://enemy/enemy.gd" id="1_nxn1p"]
+[ext_resource type="Script" path="res://buff/buff_manager.gd" id="1_ybvks"]
+[ext_resource type="Script" path="res://stats/stats.gd" id="2_lwu8c"]
+[ext_resource type="Texture2D" uid="uid://c7ntgeg7on0fd" path="res://assets/common/default_size.png" id="4_o81vt"]
+[ext_resource type="PackedScene" uid="uid://djctms1jhgoyi" path="res://ui/stats_panel_short.tscn" id="5_skdj0"]
+
+[node name="Enemy" type="Node2D"]
+script = ExtResource("1_nxn1p")
+
+[node name="BuffManager" type="Node" parent="."]
+script = ExtResource("1_ybvks")
+
+[node name="Stats" type="Node" parent="."]
+script = ExtResource("2_lwu8c")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(32, 32)
+texture = ExtResource("4_o81vt")
+
+[node name="StatsPanelShort" parent="." node_paths=PackedStringArray("stats") instance=ExtResource("5_skdj0")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 4.0
+offset_top = 8.0
+offset_right = 62.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+stats = NodePath("../Stats")

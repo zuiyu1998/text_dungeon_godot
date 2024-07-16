@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://djctms1jhgoyi"]
+
+[ext_resource type="Texture2D" uid="uid://dyhotemx73loj" path="res://assets/common/hud.png" id="1_4ahvi"]
+[ext_resource type="Script" path="res://ui/stats_panel_short.gd" id="1_mw8rt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efi17"]
+atlas = ExtResource("1_4ahvi")
+region = Rect2(307, 21, 58, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_275tp"]
+atlas = ExtResource("1_4ahvi")
+region = Rect2(308, 118, 56, 4)
+
+[node name="StatsPanelShort" type="Control"]
+custom_minimum_size = Vector2(58, 6)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 58.0
+offset_bottom = 6.0
+script = ExtResource("1_mw8rt")
+
+[node name="HealthBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_right = 56.0
+offset_bottom = 4.0
+max_value = 1.0
+step = 0.0
+value = 0.5
+texture_over = SubResource("AtlasTexture_efi17")
+texture_progress = SubResource("AtlasTexture_275tp")
+texture_progress_offset = Vector2(1, 1)

@@ -1,8 +1,6 @@
 class_name Stats
 extends Node
 
-signal die
-
 @export var buff_manager: BuffManager
 
 # stats受到的effect
@@ -14,11 +12,17 @@ var _storage_data := StorageStatsData.new(buff_manager)
 var storage := StorageStatsData.new(buff_manager)
 var memory := MemoryStatsData.new()
 
+var data: StatsData = StatsData.new()
 
-func _ready() -> void:
-	var buffer = BuffFactory.get_buff(0)
+func _init() -> void:
+	flush_state()
+
+# 添加buf
+func add_buff(id: int) -> void:
+	var buffer := BuffFactory.get_buff(id)
 	buffer.stats = self
 	buff_manager.add_child(buffer)
+
 
 func remove_effects(effects: Array[StatsEffect]) -> void:
 	for effect in effects:
@@ -48,8 +52,12 @@ func apply_effects(effects: Array[StatsEffect]) -> void:
 		effect.update(tmp_state)
 	storage = tmp_state.storage
 	
+	memory.update_by_storage(storage)
+	data.update_by_storage_and_memory(storage, memory)
+	
 func apply_effect(effect: StatsEffect) -> void:
 	apply_effects([effect])
+
 
 func flush_state() -> void:
 	apply_effects(_effects)
