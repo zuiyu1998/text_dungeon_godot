@@ -1,11 +1,10 @@
 extends RefCounted
-class_name DndPropEffects
+class_name DndPropEffectsInterface
 
 # 影响的数据
 var _effcts:  Dictionary = {} 
 # 影响的关系
 var _effct_props: Dictionary = {}
-
 
 
 # 获取对应的影响列表
