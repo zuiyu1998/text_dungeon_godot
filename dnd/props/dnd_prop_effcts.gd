@@ -1,5 +1,5 @@
 extends RefCounted
-class_name DndPropEffectsInterface
+class_name DndPropEffects
 
 # 影响的数据
 var _effcts:  Dictionary = {} 

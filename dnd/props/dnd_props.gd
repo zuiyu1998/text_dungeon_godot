@@ -3,7 +3,7 @@ class_name DndProps
 
 # 属性数据
 var _props: Dictionary = {}
-var _effcts: DndPropEffectsInterface = DndPropEffectsInterface.new()
+var _effcts: DndPropEffects = DndPropEffects.new()
 
 
 func update_prop(prop: StringName, update: float):
