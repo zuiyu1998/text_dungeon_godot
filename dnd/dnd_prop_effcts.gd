@@ -7,7 +7,6 @@ var _effcts:  Dictionary = {}
 var _effct_props: Dictionary = {}
 
 
-
 # 获取对应的影响列表
 func get_effect_list(from: StringName) -> Array[DndPropEffect]:
 	var effcted_props = _effct_props[from] as Array[String]
@@ -42,11 +41,11 @@ func to_dict() -> Dictionary:
 	
 	return {
 		effcts = dict,
-		effct_props = _effct_props	
+		effct_props = _effct_props
 	} 
 
 
-func from_dict(dict: Dictionary) -> void:
+func from_dict(dict: Dictionary):
 	for sub_dict in dict.effcts:
 		var effect = DndPropEffect.new()
 		effect.from_dict(sub_dict)
