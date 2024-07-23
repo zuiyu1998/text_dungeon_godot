@@ -41,11 +41,11 @@ func to_dict() -> Dictionary:
 	
 	return {
 		effcts = dict,
-		effct_props = _effct_props	
+		effct_props = _effct_props
 	} 
 
 
-func from_dict(dict: Dictionary) -> void:
+func from_dict(dict: Dictionary):
 	for sub_dict in dict.effcts:
 		var effect = DndPropEffect.new()
 		effect.from_dict(sub_dict)
