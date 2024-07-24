@@ -1,10 +1,14 @@
 extends RefCounted
 class_name Race
 
+func _init(model_id: int, default_props_id: int) -> void:
+	Manager.race_model_db.get_race_model(model_id)
+	Manager.dnd_props_db.get_dnd_props(default_props_id)
+	
 # 模型
 var model: RaceModel = RaceModel.new()
 # 属性
-var props: DndProp = DndProp.new()
+var props: DndProps = DndProps.new()
 # 属性影响
 var effects: DndPropEffects = DndPropEffects.new()
 

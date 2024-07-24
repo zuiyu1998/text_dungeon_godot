@@ -7,6 +7,8 @@ var max_health: float = 10.0
 
 var dnd_props: DndProps = DndProps.new()
 
+var race: Race = Race.new(1, 0)
+
 func _init(buff_manager: BuffManager) -> void:
 	_buff_manager = buff_manager
 

@@ -5,7 +5,6 @@ class_name DndProps
 var _props: Dictionary = {}
 var _effcts: DndPropEffects = DndPropEffects.new()
 
-
 func update_prop(prop: StringName, update: float):
 	_update_prop(prop, update)
 	if _effcts.has_effct(prop):
@@ -14,45 +13,38 @@ func update_prop(prop: StringName, update: float):
 			var effct_value = effct.value_rate * update
 			_update_prop(effct.to_prop, effct_value)
 			var effct_max_value = effct.max_value_rate * update
-			_update_max_prop(effct.to_prop, effct_value)
+			_update_max_prop(effct.to_prop, effct_max_value)
 			var effct_min_value = effct.min_value_rate * update
-			_update_min_prop(effct.to_prop, effct_value)
-
+			_update_min_prop(effct.to_prop, effct_min_value)
 
 func _update_prop(prop: StringName, update: float):
 	var prop_data = _props[prop] as DndProp
 	if prop_data != null:
 		prop_data.current += update
 
-
 func _update_max_prop(prop: StringName, update: float):
 	var prop_data = _props[prop] as DndProp
 	if prop_data != null:
 		prop_data.current_max += update
-
 
 func _update_min_prop(prop: StringName, update: float):
 	var prop_data = _props[prop] as DndProp
 	if prop_data != null:
 		prop_data.current_min += update
 
-
 # 添加属性
 func add_prop(prop: DndProp):
 	_props[prop.name] = prop
 
-
 func to_dict() -> Dictionary:
-	var dict = {}
-	
-	for prop: DndProp in _props:
-		dict[prop.name] = prop.to_dict()
+	var dict = []
+	for prop: DndProp in _props.values():
+		dict.push_back(prop.to_dict())
 	
 	return {
 		props = dict,
-		effects =_effcts
+		effects = _effcts.to_dict()
 	}
-
 
 func from_dict(dict: Dictionary) -> void:
 	for sub_dict: Dictionary in dict.props:
@@ -61,4 +53,3 @@ func from_dict(dict: Dictionary) -> void:
 		add_prop(prop)
 		
 	_effcts.from_dict(dict.effects)
-	
