@@ -36,7 +36,7 @@ func get_key(from: StringName, to: StringName) -> String:
 func to_dict() -> Dictionary:
 	var dict = {}
 	
-	for effect: DndPropEffect in _effcts:
+	for effect: DndPropEffect in _effcts.values():
 		dict[get_key(effect.from_prop, effect.to_prop)] = effect.to_dict()
 	
 	return {

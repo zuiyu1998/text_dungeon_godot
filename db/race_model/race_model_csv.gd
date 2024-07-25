@@ -18,7 +18,7 @@ func get_race_model(id: int) -> Race.RaceModel:
 	var dict = csv_data[id]
 	var race_model := Race.RaceModel.new()
 	race_model.health_dice = int(dict["health_dice"])
-	race_model.race_name = dict["race_name"]
-	race_model.race_second_name = dict["race_second_name"]
+	race_model.race_name = str(dict["race_name"])
+	race_model.race_second_name = str(dict["race_second_name"])
 	
 	return race_model

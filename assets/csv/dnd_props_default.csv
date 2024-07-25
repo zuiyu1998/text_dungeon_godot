@@ -1,3 +1,5 @@
 属性名,属性值,最大属性值,最小属性值,理论上限,理论下限
 name,current,current_max,current_min,max_limit,min_limit
 power,10,100,0,1000,-1000
+agile,10,100,0,1000,-1000
+burden,200,2000,0,200000,-200000
