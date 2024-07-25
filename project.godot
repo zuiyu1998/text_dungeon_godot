@@ -15,9 +15,13 @@ run/main_scene="res://levels/level.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Manager="*res://auto_load/manager.tscn"
+
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/gut/plugin.cfg")
+enabled=PackedStringArray("res://addons/csv-data-importer/plugin.cfg")
 
 [input]
 
