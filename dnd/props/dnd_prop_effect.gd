@@ -5,12 +5,10 @@ var from_prop: StringName
 var to_prop: StringName
 var value_rate: float
 var max_value_rate: float
-var min_value_rate: float 
-
+var min_value_rate: float
 
 func get_key() -> String:
 	return '%s-%s' % [from_prop, to_prop]
-
 
 func to_dict() -> Dictionary:
 	return {

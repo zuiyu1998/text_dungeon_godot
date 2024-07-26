@@ -2,10 +2,9 @@ extends RefCounted
 class_name DndPropEffects
 
 # 影响的数据
-var _effcts:  Dictionary = {} 
+var _effcts: Dictionary = {}
 # 影响的关系
 var _effct_props: Dictionary = {}
-
 
 # 获取对应的影响列表
 func get_effect_list(from: StringName) -> Array[DndPropEffect]:
@@ -20,7 +19,6 @@ func get_effect_list(from: StringName) -> Array[DndPropEffect]:
 	
 	return v
 
-
 # 是否影响
 func has_effct(from: StringName) -> bool:
 	if _effct_props[from] != null:
@@ -32,7 +30,6 @@ func has_effct(from: StringName) -> bool:
 func get_key(from: StringName, to: StringName) -> String:
 	return '%s-%s' % [from, to]
 
-
 func to_dict() -> Dictionary:
 	var dict = {}
 	
@@ -42,8 +39,7 @@ func to_dict() -> Dictionary:
 	return {
 		effcts = dict,
 		effct_props = _effct_props
-	} 
-
+	}
 
 func from_dict(dict: Dictionary):
 	for sub_dict in dict.effcts:
