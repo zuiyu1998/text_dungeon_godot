@@ -12,6 +12,8 @@ var race: Race = Race.new(1, 0, 0, 0)
 func _init(buff_manager: BuffManager) -> void:
 	_buff_manager = buff_manager
 	max_health += _get_new_max_health(true)
+	dnd_props = race.props
+	
 
 func _get_new_max_health(is_frist=false) -> int:
 	var dice = HealthDice.new()

@@ -5,6 +5,9 @@ class_name DndProps
 var _props: Dictionary = {}
 var _effcts: DndPropEffects = DndPropEffects.new()
 
+func get_prop(prop: StringName) -> DndProp:
+	return _props[prop]
+
 func update_prop(prop: StringName, update: float):
 	_update_prop(prop, update)
 	if _effcts.has_effct(prop):

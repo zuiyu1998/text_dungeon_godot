@@ -1,6 +1,8 @@
 class_name Stats
 extends Node
 
+signal stats_update
+
 @export var buff_manager: BuffManager
 
 # stats受到的effect
