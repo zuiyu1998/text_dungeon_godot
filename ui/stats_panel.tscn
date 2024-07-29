@@ -1,9 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://hnyocyu3hjy7"]
+[gd_scene load_steps=3 format=3 uid="uid://hnyocyu3hjy7"]
 
 [ext_resource type="Script" path="res://ui/stats_panel.gd" id="1_a21tf"]
+[ext_resource type="PackedScene" uid="uid://dxpkyixx47an" path="res://ui/prop_label.tscn" id="2_jxduf"]
 
 [node name="StatsPanel" type="CanvasLayer"]
-visible = false
 script = ExtResource("1_a21tf")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -26,16 +26,5 @@ custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MainContainer/VBoxContainer"]
+[node name="PropLabel" parent="MainContainer/VBoxContainer" instance=ExtResource("2_jxduf")]
 layout_mode = 2
-
-[node name="Power" type="Label" parent="MainContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "力量"
-
-[node name="PowerValue" type="Label" parent="MainContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "10
-"
