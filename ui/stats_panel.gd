@@ -10,7 +10,7 @@ var prop_label = preload("res://ui/prop_label.tscn")
 
 var props = ["power", "agile", "intelligence", "perception", "charm", "constitution"]
 
-var data: = {
+var data := {
 }
 
 var prop_labels: Dictionary = {}
@@ -41,7 +41,6 @@ func _ready() -> void:
 func update_stats_panel():
 	from_stats()
 	for prop in props:
-		print(prop)
 		var prop_label_instance: PropLabel = prop_labels[prop]
 		if prop_label_instance:
 			var label_data = PropLabel.PropLabelData.new()
@@ -50,5 +49,3 @@ func update_stats_panel():
 			prop_label_instance.update_label(label_data)
 
 pass
-
-
