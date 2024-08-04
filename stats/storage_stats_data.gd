@@ -3,10 +3,13 @@ extends RefCounted
 
 var _buff_manager: BuffManager
 
+# 最大血量
 var max_health: float = 0.0
 
+# dnd 属性
 var dnd_props: DndProps = DndProps.new()
 
+# 种族
 var race: Race = Race.new(1, 0, 0, 0)
 
 func _init(buff_manager: BuffManager) -> void:
@@ -15,7 +18,7 @@ func _init(buff_manager: BuffManager) -> void:
 	dnd_props = race.props
 	
 
-func _get_new_max_health(is_frist=false) -> int:
+func _get_new_max_health(is_frist = false) -> int:
 	var dice = HealthDice.new()
 
 	dice.set_health_dice(race.model.health_dice)

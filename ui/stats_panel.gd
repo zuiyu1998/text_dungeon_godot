@@ -4,9 +4,6 @@ class_name StatsPanel
 @export
 var stats: Stats
 
-@onready var power_value: Label = $MainContainer/VBoxContainer/HBoxContainer/PowerValue
-@onready var agile_value: Label = $MainContainer/VBoxContainer/HBoxContainer2/AgileValue
-@onready var intelligence_value: Label = $MainContainer/VBoxContainer/HBoxContainer3/IntelligenceValue
 @onready var v_box_container: VBoxContainer = $MainContainer/VBoxContainer
 
 var prop_label = preload("res://ui/prop_label.tscn")
