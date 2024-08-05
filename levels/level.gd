@@ -1,10 +1,13 @@
 extends Node2D
 
+@onready var player: Player = $Player
 @onready var enemy: Enemy = $Enemy
 
 
 func on_attack() -> void:
 	print("attack start")
+	var battle_system = BattleSystem.new([player.stats, enemy.stats])
+	
 	pass
 
 func _physics_process(_delta: float) -> void:

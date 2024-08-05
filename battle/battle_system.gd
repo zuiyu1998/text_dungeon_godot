@@ -24,9 +24,15 @@ static func get_batting_first(_stats_list: Array[Stats]) -> Array[BattleItem]:
 
 
 func battle():
-	
+	var dodge_decision = get_dodge_decision()
 	pass
 
+func get_dodge_decision() -> Decision:
+	var dodge_decision = Decision.new()
+	return dodge_decision
+
+func get_hit_result() -> void:
+	pass
 
 class BattleItem:
 	var options: BattleOptions
