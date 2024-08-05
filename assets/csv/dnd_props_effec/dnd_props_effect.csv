@@ -1,2 +1,9 @@
 来源属性,影响属性,当前值影响最大值影响最小值影响,,
 power,burden,10,0,0
+power,dodge,0.2,0,0
+agile,dodge,0.5,0,0
+perception,dodge,0.2,0,0
+perception,battting_first,0.2,0,0
+agile,battting_first,0.5,0,0
+agile,physical_hit,0.5,0,0
+perception,physical_hit,0.2,0,0

@@ -1,4 +1,11 @@
-prop,power,agile,burden
-power,0,0,1
-agile,0,0,0
-burden,0,0,0
+prop,power,agile,intelligence,perception,charm,constitution,burden,dodge,battting_first,physical_hit
+power,0,0,0,0,0,0,1,1,0,0
+agile,0,0,0,0,0,0,0,1,1,1
+intelligence,0,0,0,0,0,0,0,0,0,0
+perception,0,0,0,0,0,0,0,1,1,1
+charm,0,0,0,0,0,0,0,0,0,0
+constitution,0,0,0,0,0,0,0,0,0,0
+burden,0,0,0,0,0,0,0,0,0,0
+dodge,0,0,0,0,0,0,0,0,0,0
+battting_first,0,0,0,0,0,0,0,0,0,0
+physical_hit,0,0,0,0,0,0,0,0,0,0

@@ -10,4 +10,4 @@ var dc: int = 0
 var target_dc: int = 0
 # 本次判定的基础数值
 var base: int = 0
-var decision_factor_results: Array[DecisionFactor.DecisionFactorResult] =[]
+var decision_factor_results: Array[DecisionFactor.DecisionFactorResult] = []

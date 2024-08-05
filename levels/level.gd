@@ -7,7 +7,7 @@ extends Node2D
 func on_attack() -> void:
 	print("attack start")
 	var battle_system = BattleSystem.new([player.stats, enemy.stats])
-	
+	battle_system.battle()
 	pass
 
 func _physics_process(_delta: float) -> void:

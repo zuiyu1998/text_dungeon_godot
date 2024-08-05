@@ -2,8 +2,11 @@
 name,current,current_max,current_min,max_limit,min_limit
 power,10,100,0,1000,-1000
 agile,10,100,0,1000,-1000
-burden,200,2000,0,200000,-200000
 intelligence,10,100,0,1000,-1000
 perception,10,100,0,1000,-1000
 charm,10,100,0,1000,-1000
 constitution,10,100,0,1000,-1000
+burden,200,2000,0,200000,-200000
+dodge,10,100,0,1000,-1000
+battting_first,0,100,0,1000,-1000
+physical_hit,0,100,0,1000,-1000

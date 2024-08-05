@@ -11,7 +11,7 @@ var factors: Array[DecisionFactor] = []
 
 func decision() -> DicisionResult:
 	var res = DicisionResult.new()
-	var decision_factor_results = []
+	var decision_factor_results: Array[DecisionFactor.DecisionFactorResult]= []
 	var factor_sum = 0
 	for factor in factors:
 		var factor_res = factor.get_result()
