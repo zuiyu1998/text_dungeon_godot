@@ -7,3 +7,6 @@ perception,battting_first,0.2,0,0
 agile,battting_first,0.5,0,0
 agile,physical_hit,0.5,0,0
 perception,physical_hit,0.2,0,0
+intelligence,immunity,0.2,0,0
+intelligence,magic_hit,0.5,0,0
+perception,magic_hit,0.2,0,0
