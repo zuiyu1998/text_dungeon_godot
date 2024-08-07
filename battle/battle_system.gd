@@ -47,10 +47,18 @@ func get_battle_result() -> BattleResult:
 		if not armor_decision_res.success:
 			print("hit fail, battle fail")
 			return res
-		
+
+	var damage_res = get_damage()
+
+	res.damage_result = damage_res
+
 	
 	return res
-	
+
+func get_damage() -> DamageResult:
+	var active_item := items[active_item_index]
+	return active_item.options.damge_info.get_damage_result()
+
 
 func get_armor_decision() -> DicisionResult:
 	var active_item := items[active_item_index]
@@ -87,3 +95,4 @@ class BattleItem:
 class BattleResult:
 	var dodge_decision_result: DicisionResult
 	var armor_decision_result: DicisionResult
+	var damage_result: DamageResult
