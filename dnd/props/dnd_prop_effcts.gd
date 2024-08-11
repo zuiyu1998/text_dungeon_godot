@@ -21,10 +21,10 @@ func get_effect_list(from: StringName) -> Array[DndPropEffect]:
 
 # 是否影响
 func has_effct(from: StringName) -> bool:
-	if _effct_props[from] != null:
-		return true
-	else:
+	if _effct_props.get(from) == null:
 		return false
+	else:
+		return true
 
 # 得到key，根据影响的属性和被影响的属性
 func get_key(from: StringName, to: StringName) -> String:

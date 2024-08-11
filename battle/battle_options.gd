@@ -29,3 +29,4 @@ func from_stats(stats: Stats) -> void:
 	magic_hit_num = stats.storage.dnd_props.get_prop("magic_hit").get_value()
 	armor_num = stats.storage.dnd_props.get_prop("armor").get_value()
 	immunity_num = stats.storage.dnd_props.get_prop("immunity").get_value()
+	damge_info.from_battle_stat(stats.storage.battle_stat)

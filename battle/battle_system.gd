@@ -30,6 +30,12 @@ static func get_batting_first(_stats_list: Array[Stats]) -> Array[BattleItem]:
 
 func battle():
 	var res = get_battle_result()
+	var battle_effect = BattleEffct.new()
+	battle_effect.battle_result = res
+	items[unactive_item_index].source.apply_effect(battle_effect)
+	
+	battle_effect.is_active = true
+	items[active_item_index].source.apply_effect(battle_effect)
 
 
 func get_battle_result() -> BattleResult:
@@ -48,10 +54,11 @@ func get_battle_result() -> BattleResult:
 			print("hit fail, battle fail")
 			return res
 
+	res.is_hit = true;
+
 	var damage_res = get_damage()
 
 	res.damage_result = damage_res
-
 	
 	return res
 
@@ -96,3 +103,5 @@ class BattleResult:
 	var dodge_decision_result: DicisionResult
 	var armor_decision_result: DicisionResult
 	var damage_result: DamageResult
+
+	var is_hit: bool = false
