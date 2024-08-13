@@ -1,5 +1,5 @@
 extends Node
-class_name IManager
+class_name ICsvManager
 
 var race_model_db: RaceModelInterface = RaceModelCsv.new()
 var dnd_props_db: DndPropsDefaultInterface = DndPropsDefaulCsv.new()

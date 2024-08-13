@@ -17,7 +17,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Manager="*res://auto_load/manager.tscn"
+CsvManager="*res://auto_load/csv_manager.tscn"
+PlayerState="*res://auto_load/player_state.gd"
 
 [editor_plugins]
 

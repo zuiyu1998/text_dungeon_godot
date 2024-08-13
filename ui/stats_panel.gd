@@ -29,9 +29,6 @@ func from_stats() -> void:
 			data[prop] = dnd_prop.current
 	pass
 
-func _physics_process(delta: float) -> void:
-	if Input.is_action_just_pressed("attack"):
-		visible = false
 
 func _ready() -> void:
 	spawn_labels()

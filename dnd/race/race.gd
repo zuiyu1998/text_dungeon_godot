@@ -9,10 +9,10 @@ var props: DndProps = DndProps.new()
 var effects: DndPropEffects = DndPropEffects.new()
 
 func _init(model_id: int, default_props_id: int, effct_props_id: int, effects_id: int) -> void:
-	model = Manager.race_model_db.get_race_model(model_id)
-	props = Manager.dnd_props_db.get_dnd_props(default_props_id)
-	effects._effct_props = Manager.dnd_props_effect_props_db.get_dnd_props_effect_props(effct_props_id)
-	effects._effcts = Manager.dnd_props_effect_db.get_dnd_props_effect(effects_id)
+	model = CsvManager.race_model_db.get_race_model(model_id)
+	props = CsvManager.dnd_props_db.get_dnd_props(default_props_id)
+	effects._effct_props = CsvManager.dnd_props_effect_props_db.get_dnd_props_effect_props(effct_props_id)
+	effects._effcts = CsvManager.dnd_props_effect_db.get_dnd_props_effect(effects_id)
 
 class RaceModel:
 	# 种族名
