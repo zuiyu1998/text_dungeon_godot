@@ -64,4 +64,3 @@ func apply_effect(effect: StatsEffect) -> void:
 func flush_state() -> void:
 	apply_effects(_effects)
 	
-

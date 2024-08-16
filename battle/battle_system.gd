@@ -36,6 +36,8 @@ func battle():
 	
 	battle_effect.is_active = true
 	items[active_item_index].source.apply_effect(battle_effect)
+	
+	# todo 其他发起攻击
 
 
 func get_battle_result() -> BattleResult:
