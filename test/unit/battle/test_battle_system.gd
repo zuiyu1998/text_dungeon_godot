@@ -2,9 +2,10 @@ extends GutTest
 
 func test_battle_system():
 	var test_a = Stats.new()
-	test_a.storage.update_prop("physical_hit", 10)
-	test_a.storage.update_prop("battting_first", 10)
-	test_a.storage.update_prop("power", 10)
+	test_a._storage_data.update_prop("physical_hit", 10)
+	test_a._storage_data.update_prop("battting_first", 10)
+	test_a._storage_data.update_prop("power", 10)
+	test_a.flush_state()
 	
 	var test_b = Stats.new()
 	

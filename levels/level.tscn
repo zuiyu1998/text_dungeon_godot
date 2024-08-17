@@ -11,4 +11,4 @@ script = ExtResource("1_bwmgb")
 [node name="Enemy2" parent="EnemyMap" instance=ExtResource("2_qd6kq")]
 
 [node name="Enemy" parent="EnemyMap" instance=ExtResource("2_qd6kq")]
-position = Vector2(64, 0)
+position = Vector2(250, 6)

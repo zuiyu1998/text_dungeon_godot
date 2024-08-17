@@ -57,6 +57,8 @@ func apply_effects(effects: Array[StatsEffect]) -> void:
 	memory.update_by_storage(storage)
 	data.update_by_storage_and_memory(storage, memory)
 	
+	stats_update.emit()
+	
 func apply_effect(effect: StatsEffect) -> void:
 	apply_effects([effect])
 

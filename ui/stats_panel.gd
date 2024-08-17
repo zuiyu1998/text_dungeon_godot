@@ -35,6 +35,10 @@ func _ready() -> void:
 	update_stats_panel()
 	stats.stats_update.connect(update_stats_panel)
 
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("back"):
+		visible = false
+
 func update_stats_panel():
 	from_stats()
 	for prop in props:

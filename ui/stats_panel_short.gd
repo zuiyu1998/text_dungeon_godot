@@ -7,9 +7,8 @@ class_name StatsPanelShort
 var stats: Stats
 
 func _ready() -> void:
-	stats.data.health_change.connect(update_health)
+	stats.stats_update.connect(update_health)
 	update_health()
-
 
 func update_health() -> void:
 	var percentage := stats.data.health / stats.data.max_health
