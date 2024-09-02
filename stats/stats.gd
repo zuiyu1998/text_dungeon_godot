@@ -3,7 +3,7 @@ extends Node
 
 signal stats_update
 
-@export var buff_manager: BuffManager
+@onready var buff_manager: BuffManager = $BuffManager
 
 # stats受到的effect
 var _effects : Array[StatsEffect] = []
@@ -16,8 +16,6 @@ var memory := MemoryStatsData.new()
 
 var data: StatsData = StatsData.new()
 
-func _init() -> void:
-	flush_state()
 
 # 添加buf
 func add_buff(id: int) -> void:

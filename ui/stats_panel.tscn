@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://hnyocyu3hjy7"]
 
 [ext_resource type="Script" path="res://ui/stats_panel.gd" id="1_a21tf"]
-[ext_resource type="PackedScene" uid="uid://dxpkyixx47an" path="res://ui/prop_label.tscn" id="2_jxduf"]
+[ext_resource type="PackedScene" uid="uid://c3hrqucy4n236" path="res://prop_container.tscn" id="2_32c5m"]
 
 [node name="StatsPanel" type="CanvasLayer"]
 script = ExtResource("1_a21tf")
@@ -14,17 +14,45 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MainContainer" type="PanelContainer" parent="."]
+[node name="TabContainer" type="TabContainer" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+current_tab = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MainContainer"]
+[node name="Props" type="HBoxContainer" parent="TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Props"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
-size_flags_horizontal = 0
 
-[node name="PropLabel" parent="MainContainer/VBoxContainer" instance=ExtResource("2_jxduf")]
+[node name="Label" type="Label" parent="TabContainer/Props/VBoxContainer"]
 layout_mode = 2
+text = "baseProps"
+
+[node name="Power" parent="TabContainer/Props/VBoxContainer" instance=ExtResource("2_32c5m")]
+layout_mode = 2
+
+[node name="Agile" parent="TabContainer/Props/VBoxContainer" instance=ExtResource("2_32c5m")]
+layout_mode = 2
+prop_label = "agile"
+
+[node name="Intelligence" parent="TabContainer/Props/VBoxContainer" instance=ExtResource("2_32c5m")]
+layout_mode = 2
+prop_label = "intelligence"
+
+[node name="Perception" parent="TabContainer/Props/VBoxContainer" instance=ExtResource("2_32c5m")]
+layout_mode = 2
+prop_label = "perception"
+
+[node name="Charm" parent="TabContainer/Props/VBoxContainer" instance=ExtResource("2_32c5m")]
+layout_mode = 2
+prop_label = "charm"
+
+[node name="Constitution" parent="TabContainer/Props/VBoxContainer" instance=ExtResource("2_32c5m")]
+layout_mode = 2
+prop_label = "constitution"

@@ -9,6 +9,7 @@ script = ExtResource("1_bwmgb")
 [node name="EnemyMap" type="Node2D" parent="."]
 
 [node name="Enemy2" parent="EnemyMap" instance=ExtResource("2_qd6kq")]
+position = Vector2(422, 63)
 
 [node name="Enemy" parent="EnemyMap" instance=ExtResource("2_qd6kq")]
-position = Vector2(250, 6)
+position = Vector2(278, 71)

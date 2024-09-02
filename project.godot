@@ -51,6 +51,11 @@ backpack={
 ]
 }
 
+[internationalization]
+
+locale/translation_remaps={}
+locale/translations=PackedStringArray("res://language/i18.en.translation", "res://language/i18.zh.translation")
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

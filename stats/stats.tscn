@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ch1x0171j80wb"]
+
+[ext_resource type="Script" path="res://stats/stats.gd" id="1_j0y46"]
+[ext_resource type="Script" path="res://buff/buff_manager.gd" id="2_0hfle"]
+
+[node name="Stats" type="Node"]
+script = ExtResource("1_j0y46")
+
+[node name="BuffManager" type="Node" parent="."]
+script = ExtResource("2_0hfle")

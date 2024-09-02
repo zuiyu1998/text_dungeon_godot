@@ -1,20 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://b4fyg8aki66uv"]
+[gd_scene load_steps=4 format=3 uid="uid://b4fyg8aki66uv"]
 
-[ext_resource type="Script" path="res://buff/buff_manager.gd" id="1_an6dw"]
 [ext_resource type="Script" path="res://player/player.gd" id="1_kyu5w"]
-[ext_resource type="Script" path="res://stats/stats.gd" id="2_nhw1h"]
+[ext_resource type="PackedScene" uid="uid://ch1x0171j80wb" path="res://stats/stats.tscn" id="3_okxnj"]
 [ext_resource type="PackedScene" uid="uid://hnyocyu3hjy7" path="res://ui/stats_panel.tscn" id="3_texkt"]
 
 [node name="Player" type="Node2D"]
 script = ExtResource("1_kyu5w")
 
-[node name="BuffManager" type="Node" parent="."]
-script = ExtResource("1_an6dw")
+[node name="Stats" parent="." instance=ExtResource("3_okxnj")]
 
-[node name="Stats" type="Node" parent="." node_paths=PackedStringArray("buff_manager")]
-script = ExtResource("2_nhw1h")
-buff_manager = NodePath("../BuffManager")
-
-[node name="StatsPanel" parent="." node_paths=PackedStringArray("stats") instance=ExtResource("3_texkt")]
+[node name="StatsPanel" parent="." instance=ExtResource("3_texkt")]
 visible = false
-stats = NodePath("../Stats")

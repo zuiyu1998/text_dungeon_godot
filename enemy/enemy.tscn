@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://csfueq6rsgklv"]
+[gd_scene load_steps=6 format=3 uid="uid://csfueq6rsgklv"]
 
 [ext_resource type="Script" path="res://enemy/enemy.gd" id="1_nxn1p"]
-[ext_resource type="Script" path="res://buff/buff_manager.gd" id="1_ybvks"]
-[ext_resource type="Script" path="res://stats/stats.gd" id="2_lwu8c"]
+[ext_resource type="PackedScene" uid="uid://ch1x0171j80wb" path="res://stats/stats.tscn" id="2_wgs6p"]
 [ext_resource type="Texture2D" uid="uid://c7ntgeg7on0fd" path="res://assets/common/default_size.png" id="4_o81vt"]
 [ext_resource type="PackedScene" uid="uid://djctms1jhgoyi" path="res://ui/stats_panel_short.tscn" id="5_skdj0"]
 [ext_resource type="PackedScene" uid="uid://hnyocyu3hjy7" path="res://ui/stats_panel.tscn" id="6_e6wkw"]
@@ -10,11 +9,7 @@
 [node name="Enemy" type="Node2D"]
 script = ExtResource("1_nxn1p")
 
-[node name="BuffManager" type="Node" parent="."]
-script = ExtResource("1_ybvks")
-
-[node name="Stats" type="Node" parent="."]
-script = ExtResource("2_lwu8c")
+[node name="Stats" parent="." instance=ExtResource("2_wgs6p")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(32, 32)
@@ -34,6 +29,5 @@ grow_horizontal = 2
 grow_vertical = 2
 stats = NodePath("../Stats")
 
-[node name="StatsPanel" parent="." node_paths=PackedStringArray("stats") instance=ExtResource("6_e6wkw")]
+[node name="StatsPanel" parent="." instance=ExtResource("6_e6wkw")]
 visible = false
-stats = NodePath("../Stats")
