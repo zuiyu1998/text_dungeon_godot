@@ -29,5 +29,6 @@ grow_horizontal = 2
 grow_vertical = 2
 stats = NodePath("../Stats")
 
-[node name="StatsPanel" parent="." instance=ExtResource("6_e6wkw")]
+[node name="StatsPanel" parent="." node_paths=PackedStringArray("stats") instance=ExtResource("6_e6wkw")]
 visible = false
+stats = NodePath("../Stats")

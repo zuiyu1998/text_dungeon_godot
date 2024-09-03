@@ -7,3 +7,10 @@ perception,perception,感知
 charm,charm,魅力
 constitution,constitution,体质
 Props,Props,属性
+deriveProps,deriveProps,派生属性
+battting_first,battting_first,先攻
+dodge,dodge,闪避
+physical_hit,physical_hit,物理命中
+magic_hit,magic_hit,法术命中
+armor,armor,护甲
+immunity,immunity,豁免

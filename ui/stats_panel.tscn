@@ -24,35 +24,82 @@ current_tab = 0
 
 [node name="Props" type="HBoxContainer" parent="TabContainer"]
 layout_mode = 2
+alignment = 2
 metadata/_tab_index = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Props"]
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Props"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="TabContainer/Props/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Props/MarginContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="TabContainer/Props/VBoxContainer"]
+[node name="Label" type="Label" parent="TabContainer/Props/MarginContainer/VBoxContainer2/VBoxContainer"]
 layout_mode = 2
 text = "baseProps"
 
-[node name="Power" parent="TabContainer/Props/VBoxContainer" instance=ExtResource("2_32c5m")]
+[node name="Power" parent="TabContainer/Props/MarginContainer/VBoxContainer2/VBoxContainer" instance=ExtResource("2_32c5m")]
 layout_mode = 2
 
-[node name="Agile" parent="TabContainer/Props/VBoxContainer" instance=ExtResource("2_32c5m")]
+[node name="Agile" parent="TabContainer/Props/MarginContainer/VBoxContainer2/VBoxContainer" instance=ExtResource("2_32c5m")]
 layout_mode = 2
 prop_label = "agile"
 
-[node name="Intelligence" parent="TabContainer/Props/VBoxContainer" instance=ExtResource("2_32c5m")]
+[node name="Intelligence" parent="TabContainer/Props/MarginContainer/VBoxContainer2/VBoxContainer" instance=ExtResource("2_32c5m")]
 layout_mode = 2
 prop_label = "intelligence"
 
-[node name="Perception" parent="TabContainer/Props/VBoxContainer" instance=ExtResource("2_32c5m")]
+[node name="Perception" parent="TabContainer/Props/MarginContainer/VBoxContainer2/VBoxContainer" instance=ExtResource("2_32c5m")]
 layout_mode = 2
 prop_label = "perception"
 
-[node name="Charm" parent="TabContainer/Props/VBoxContainer" instance=ExtResource("2_32c5m")]
+[node name="Charm" parent="TabContainer/Props/MarginContainer/VBoxContainer2/VBoxContainer" instance=ExtResource("2_32c5m")]
 layout_mode = 2
 prop_label = "charm"
 
-[node name="Constitution" parent="TabContainer/Props/VBoxContainer" instance=ExtResource("2_32c5m")]
+[node name="Constitution" parent="TabContainer/Props/MarginContainer/VBoxContainer2/VBoxContainer" instance=ExtResource("2_32c5m")]
 layout_mode = 2
 prop_label = "constitution"
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Props/MarginContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_top = 16
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="TabContainer/Props/MarginContainer/VBoxContainer2/MarginContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Props/MarginContainer/VBoxContainer2/MarginContainer/VBoxContainer2"]
+layout_mode = 2
+text = "deriveProps"
+
+[node name="BatttingFirst" parent="TabContainer/Props/MarginContainer/VBoxContainer2/MarginContainer/VBoxContainer2" instance=ExtResource("2_32c5m")]
+layout_mode = 2
+prop_label = "battting_first"
+
+[node name="Dodge" parent="TabContainer/Props/MarginContainer/VBoxContainer2/MarginContainer/VBoxContainer2" instance=ExtResource("2_32c5m")]
+layout_mode = 2
+prop_label = "dodge"
+
+[node name="PhysicalHit" parent="TabContainer/Props/MarginContainer/VBoxContainer2/MarginContainer/VBoxContainer2" instance=ExtResource("2_32c5m")]
+layout_mode = 2
+prop_label = "physical_hit"
+
+[node name="MagicHit" parent="TabContainer/Props/MarginContainer/VBoxContainer2/MarginContainer/VBoxContainer2" instance=ExtResource("2_32c5m")]
+layout_mode = 2
+prop_label = "magic_hit"
+
+[node name="Armor" parent="TabContainer/Props/MarginContainer/VBoxContainer2/MarginContainer/VBoxContainer2" instance=ExtResource("2_32c5m")]
+layout_mode = 2
+prop_label = "armor"
+
+[node name="Immunity" parent="TabContainer/Props/MarginContainer/VBoxContainer2/MarginContainer/VBoxContainer2" instance=ExtResource("2_32c5m")]
+layout_mode = 2
+prop_label = "immunity"

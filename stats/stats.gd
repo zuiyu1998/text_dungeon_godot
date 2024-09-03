@@ -6,7 +6,7 @@ signal stats_update
 @onready var buff_manager: BuffManager = $BuffManager
 
 # stats受到的effect
-var _effects : Array[StatsEffect] = []
+var _effects: Array[StatsEffect] = []
 
 # 原始数据
 var _storage_data := StorageStatsData.new(buff_manager)
@@ -16,6 +16,9 @@ var memory := MemoryStatsData.new()
 
 var data: StatsData = StatsData.new()
 
+
+func get_prop(prop: StringName) -> DndProp:
+	return storage.dnd_props.get_prop(prop)
 
 # 添加buf
 func add_buff(id: int) -> void:
@@ -63,4 +66,3 @@ func apply_effect(effect: StatsEffect) -> void:
 
 func flush_state() -> void:
 	apply_effects(_effects)
-	

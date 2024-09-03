@@ -9,5 +9,6 @@ script = ExtResource("1_kyu5w")
 
 [node name="Stats" parent="." instance=ExtResource("3_okxnj")]
 
-[node name="StatsPanel" parent="." instance=ExtResource("3_texkt")]
+[node name="StatsPanel" parent="." node_paths=PackedStringArray("stats") instance=ExtResource("3_texkt")]
 visible = false
+stats = NodePath("../Stats")
